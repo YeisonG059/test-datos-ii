@@ -4,6 +4,16 @@ package floydwarshall;
 
 public class Floydwarshall {
 
+     static int INF=999;     
+    static int[][] M = {    
+                        {0  , INF, 9,  2, INF}, 
+                        {2, 0  , INF,  INF, 3}, 
+                        {INF, 2, 0  ,  2, 3}, 
+                        {1, INF, INF,  0  , 4}, 
+                        {INF, 2, INF,  INF, 0  }, 
+                                
+                       };
+    
     static void floyd_warshall(int grafo[][]){
         int n = grafo.length;
         int temp=0;
@@ -38,13 +48,14 @@ public class Floydwarshall {
         System.out.println("   ");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
-                System.out.println(m[i][j]+" ");
+                System.out.print(m[i][j]+" ");
             }
+            System.out.println("");
         }
     }
     
     public static void main(String[] args) {
-        
+        floyd_warshall(M);
     }
     
 }
